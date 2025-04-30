@@ -14,7 +14,7 @@ function App() {
   const [sortBy, setSortBy] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/bots")
+    fetch("https://json-help.onrender.com/bots")
       .then((res) => res.json())
       .then((data) => setBots(data));
   }, []);
@@ -29,7 +29,7 @@ function App() {
   };
 
   const dischargeBot = (botId) => {
-    fetch(`http://localhost:3000/bots/${botId}`, {
+    fetch(`https://json-help.onrender.com/bots${botId}`, {
       method: "DELETE",
     });
     setBotArmy(botArmy.filter((b) => b.id !== botId));
